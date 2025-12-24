@@ -7,6 +7,14 @@ import { saveAs } from 'file-saver';
 import { Image as ImageIcon, Upload, X, ArrowUp, ArrowDown, Loader2, FileIcon } from 'lucide-react';
 import ToolLayout from '@/components/ToolLayout';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Image to PDF - Convert JPG/PNG to PDF Free | Smart Tools',
+    description: 'Convert your images (JPG, PNG, WebP) into a single PDF document. Drag and drop, reorder, and convert instantly for free.',
+    keywords: ['image to pdf', 'jpg to pdf', 'png to pdf', 'convert image to pdf', 'photos to pdf'],
+};
+
 export default function ImageToPDFPage() {
     const [files, setFiles] = useState<File[]>([]);
     const [isProcessing, setIsProcessing] = useState(false);

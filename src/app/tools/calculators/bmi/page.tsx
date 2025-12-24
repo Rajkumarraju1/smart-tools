@@ -4,6 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { Activity, RefreshCcw } from 'lucide-react';
 import ToolLayout from '@/components/ToolLayout';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'BMI Calculator - Calculate Body Mass Index Free | Smart Tools',
+    description: 'Calculate your Body Mass Index (BMI) accurately. Enter height and weight to check if you are Underweight, Normal, or Overweight. Metric and Imperial units supported.',
+    keywords: ['bmi calculator', 'body mass index', 'calculate bmi', 'healthy weight calculator', 'bmi formula'],
+};
+
 export default function BMICalculatorPage() {
     const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
     const [height, setHeight] = useState('');
