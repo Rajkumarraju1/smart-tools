@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://smart-tools-app.vercel.app'; // Replace with your actual domain later
+    const baseUrl = 'https://mywebutils.online';
 
     // Define your static routes
     const routes = [

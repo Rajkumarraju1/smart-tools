@@ -3,7 +3,7 @@ export default function JsonLd() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Smart Tools',
-        url: 'https://smart-tools-app.vercel.app',
+        url: 'https://mywebutils.online',
         description: 'A comprehensive collection of free online tools including PDF merger, image compressor, JSON formatter, and various calculators.',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',

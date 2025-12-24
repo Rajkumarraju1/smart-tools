@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://smart-tools-app.vercel.app',
+    url: 'https://mywebutils.online',
     siteName: 'Smart Tools',
     title: 'Smart Tools - Free Online Utilities',
     description: 'Free, secure, and fast online tools for PDF, Images, Text, and Calculators.',
