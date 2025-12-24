@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     default: 'Smart Tools - Free Online Utilities for Everyone',
     template: '%s | Smart Tools',
   },
+  icons: {
+    icon: '/icon.png',
+  },
   description: 'A massive collection of free, secure, and instant online tools. Merge PDFs, compress images, calculate BMI, format JSON, and more. No signup required.',
   keywords: ['online tools', 'pdf merger', 'image compressor', 'json formatter', 'bmi calculator', 'free utilities', 'web tools', 'developer tools'],
   authors: [{ name: 'Smart Tools Team' }],
