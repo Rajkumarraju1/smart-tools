@@ -82,7 +82,7 @@ export default function ImageToPDFPage() {
             }
 
             const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
             saveAs(blob, 'images-converted.pdf');
         } catch (err) {
             console.error(err);
