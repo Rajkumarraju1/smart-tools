@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FileText, Image as ImageIcon, Video, Settings, ArrowRight } from 'lucide-react';
+import { FileText, Image as ImageIcon, Settings, ArrowRight } from 'lucide-react';
 
 const categories = [
   {

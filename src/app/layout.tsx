@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -60,6 +61,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50 text-gray-900`}>
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9682711224616634"
+        />
         <JsonLd />
         <Navbar />
         <main className="flex-grow">

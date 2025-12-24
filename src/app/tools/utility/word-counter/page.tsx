@@ -6,23 +6,14 @@ import ToolLayout from '@/components/ToolLayout';
 
 export default function WordCounterPage() {
     const [text, setText] = useState('');
-    const [stats, setStats] = useState({
-        words: 0,
-        characters: 0,
-        sentences: 0,
-        paragraphs: 0,
-        readingTime: 0
-    });
+    // Derived state - no need for useEffect
+    const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+    const characters = text.length;
+    const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(x => x.trim().length > 0).length;
+    const paragraphs = text.trim() === '' ? 0 : text.split(/\n\n+/).filter(x => x.trim().length > 0).length;
+    const readingTime = Math.ceil(words / 200);
 
-    useEffect(() => {
-        const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-        const characters = text.length;
-        const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(x => x.trim().length > 0).length;
-        const paragraphs = text.trim() === '' ? 0 : text.split(/\n\n+/).filter(x => x.trim().length > 0).length;
-        const readingTime = Math.ceil(words / 200); // Average 200 wpm
-
-        setStats({ words, characters, sentences, paragraphs, readingTime });
-    }, [text]);
+    const stats = { words, characters, sentences, paragraphs, readingTime };
 
     const handleCopy = () => {
         navigator.clipboard.writeText(text);
