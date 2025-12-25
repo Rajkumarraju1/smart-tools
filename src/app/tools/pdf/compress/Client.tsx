@@ -82,7 +82,10 @@ export default function CompressPDFClient() {
 
         // Dynamically import pdfjs-dist to avoid SSR issues with DOMMatrix
         const pdfjsLib = await import('pdfjs-dist');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
+        // Use unpkg as it's generally more reliable for recent npm versions
+        // We use the exact version to match the installed package
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
         // 1. Load PDF with PDF.js
         const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
