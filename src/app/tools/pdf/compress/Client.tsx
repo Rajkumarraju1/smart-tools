@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { PDFDocument } from 'pdf-lib';
 import { saveAs } from 'file-saver';
 import { Image as ImageIcon, Upload, X, ArrowUp, ArrowDown, Loader2, FileIcon, Minimize2, Settings, Info } from 'lucide-react';
 import ToolLayout from '@/components/ToolLayout';
-import * as pdfjsLib from 'pdfjs-dist';
 
 export default function CompressPDFClient() {
     const [file, setFile] = useState<File | null>(null);
@@ -15,13 +14,6 @@ export default function CompressPDFClient() {
     const [compressedSize, setCompressedSize] = useState<number | null>(null);
     const [compressionMode, setCompressionMode] = useState<'standard' | 'strong'>('standard');
     const [progress, setProgress] = useState<number>(0);
-
-    // Initialize PDF.js worker
-    useEffect(() => {
-        // Use a compatible worker version. 
-        // Note: In production this should ideally be served locally, but CDN is reliable for client-only tools.
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
-    }, []);
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         if (acceptedFiles.length > 0) {
@@ -87,6 +79,10 @@ export default function CompressPDFClient() {
     const compressStrong = async (file: File) => {
         // Strong: Rasterize pages to images -> New PDF
         const arrayBuffer = await file.arrayBuffer();
+
+        // Dynamically import pdfjs-dist to avoid SSR issues with DOMMatrix
+        const pdfjsLib = await import('pdfjs-dist');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
         // 1. Load PDF with PDF.js
         const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
