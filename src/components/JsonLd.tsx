@@ -24,6 +24,7 @@ export default function JsonLd() {
         author: {
             '@type': 'Organization',
             name: 'Smart Tools Team',
+            logo: 'https://mywebutils.online/logo.png',
         },
     };
 

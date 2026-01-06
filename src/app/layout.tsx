@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     description: 'Free, secure, and fast online tools for PDF, Images, Text, and Calculators.',
     // images: ['/twitter-image.png'],
   },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   robots: {
     index: true,
     follow: true,

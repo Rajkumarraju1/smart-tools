@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/terms',
         '/tools/pdf',
         '/tools/pdf/merge',
+        '/tools/pdf/compress',
         '/tools/pdf/image-to-pdf',
         '/tools/image',
         '/tools/image/compress',
