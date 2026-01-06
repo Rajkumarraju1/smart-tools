@@ -26,6 +26,13 @@ const pdfTools = [
         href: '/tools/pdf/image-to-pdf',
         color: 'bg-yellow-100 text-yellow-600',
     },
+    {
+        title: 'PPT to PDF',
+        description: 'Convert PowerPoint presentations (PPT, PPTX) to PDF.',
+        icon: FileText,
+        href: '/tools/pdf/ppt-to-pdf',
+        color: 'bg-green-100 text-green-600',
+    },
 ];
 
 export default function PDFToolsPage() {
