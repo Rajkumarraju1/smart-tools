@@ -9,6 +9,7 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mywebutils.online'),
   title: {
     default: 'Smart Tools - Free Online Utilities for Everyone',
     template: '%s | Smart Tools',

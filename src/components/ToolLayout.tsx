@@ -7,7 +7,7 @@ import { ChevronLeft } from 'lucide-react';
 interface ToolLayoutProps {
     title: string;
     description: string;
-    icon: React.ElementType;
+    icon: React.ElementType | React.ReactNode;
     children: React.ReactNode;
     category?: 'PDF' | 'Image' | 'Video' | 'Utility';
 }
@@ -15,10 +15,23 @@ interface ToolLayoutProps {
 const ToolLayout: React.FC<ToolLayoutProps> = ({
     title,
     description,
-    icon: Icon,
+    icon,
     children,
     category,
 }) => {
+    // Helper to render icon whether it's a Component or an Element
+    const renderIcon = () => {
+        if (React.isValidElement(icon)) {
+            return icon;
+        }
+        // Assume it's a component class/function
+        const IconComponent = icon as React.ElementType;
+        if (IconComponent) {
+            return <IconComponent className="h-8 w-8 text-blue-600" />;
+        }
+        return null;
+    };
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Breadcrumb / Back Button */}
@@ -38,7 +51,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 bg-blue-50 rounded-xl">
-                                <Icon className="h-8 w-8 text-blue-600" />
+                                {renderIcon()}
                             </div>
                             <div>
                                 <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
