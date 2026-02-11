@@ -10,6 +10,7 @@ interface ToolLayoutProps {
     icon: React.ElementType | React.ReactNode;
     children: React.ReactNode;
     category?: 'PDF' | 'Image' | 'Video' | 'Utility';
+    extraContent?: React.ReactNode;
 }
 
 const ToolLayout: React.FC<ToolLayoutProps> = ({
@@ -18,6 +19,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
     icon,
     children,
     category,
+    extraContent, // New prop
 }) => {
     // Helper to render icon whether it's a Component or an Element
     const renderIcon = () => {
@@ -84,6 +86,13 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                     <div className="mt-8 bg-gray-100 rounded-lg p-4 h-24 flex items-center justify-center text-gray-400 text-sm">
                         Ad Space (Leaderboard)
                     </div>
+
+                    {/* SEO / Extra Content Section */}
+                    {extraContent && (
+                        <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 prose prose-blue max-w-none">
+                            {extraContent}
+                        </div>
+                    )}
                 </div>
 
                 {/* Sidebar (Ads & Related Tools) */}

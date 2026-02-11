@@ -79,6 +79,40 @@ export default function Home() {
           </Link>
         ))}
       </div>
+      {/* Why Section */}
+      <div className="mt-24 mb-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Use Smart Tools?</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            We provide simple, powerful, and secure tools for your everyday needs.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="p-6 bg-blue-50 rounded-2xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Privacy First</h3>
+            <p className="text-gray-600">All tools run in your browser. Your files never leave your device.</p>
+          </div>
+          <div className="p-6 bg-green-50 rounded-2xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Completely Free</h3>
+            <p className="text-gray-600">No subscriptions, no watermarks, no limits. Just free tools.</p>
+          </div>
+          <div className="p-6 bg-purple-50 rounded-2xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Blazing Fast</h3>
+            <p className="text-gray-600">Optimized for speed. Get your results in seconds, not minutes.</p>
+          </div>
+        </div>
+
+        <div className="mt-16 prose prose-blue max-w-none mx-auto text-gray-600">
+          <h2 className="text-center text-gray-900">About Our Tools</h2>
+          <p className="text-center">
+            Smart Tools is a collection of useful utilities accessible directly from your web browser.
+            Whether you need to manipulate PDF files, convert images, or perform quick calculations,
+            we have you covered. Our platform is designed to be mobile-friendly, so you can work on the go.
+            We are constantly adding new tools to help developers, students, and professionals be more productive.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

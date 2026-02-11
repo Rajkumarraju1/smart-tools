@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import { PDFDocument } from 'pdf-lib';
 import { saveAs } from 'file-saver';
 import { Image as ImageIcon, Upload, X, ArrowUp, ArrowDown, Loader2, FileIcon, Minimize2, Settings, Info } from 'lucide-react';
-import ToolLayout from '@/components/ToolLayout';
+
 
 export default function CompressPDFClient() {
     const [file, setFile] = useState<File | null>(null);
@@ -144,131 +144,124 @@ export default function CompressPDFClient() {
     };
 
     return (
-        <ToolLayout
-            title="Compress PDF"
-            description="Reduce the file size of your PDF documents instantly."
-            icon={Minimize2}
-            category="PDF"
-        >
-            <div className="w-full max-w-2xl mx-auto space-y-8">
+        <div className="w-full max-w-2xl mx-auto space-y-8">
 
-                {/* Upload Area */}
-                {!file ? (
-                    <div
-                        {...getRootProps()}
-                        className={`border-2 border-dashed rounded-xl p-12 text-center cursor-pointer transition-colors ${isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-blue-400 hover:bg-gray-50'
-                            }`}
-                    >
-                        <input {...getInputProps()} />
-                        <Upload className="mx-auto h-16 w-16 text-gray-400 mb-4" />
-                        <p className="text-xl font-medium text-gray-900">Drag & drop a PDF here</p>
-                        <p className="text-sm text-gray-500 mt-2">or click to select file</p>
-                    </div>
-                ) : (
-                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm space-y-6">
-                        {/* File Info */}
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-4">
-                                <div className="bg-red-100 p-3 rounded-lg">
-                                    <FileIcon className="h-8 w-8 text-red-600" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 truncate max-w-[200px] sm:max-w-md">{file.name}</h3>
-                                    <p className="text-sm text-gray-500">
-                                        Original size: {(file.size / 1024 / 1024).toFixed(2)} MB
+            {/* Upload Area */}
+            {!file ? (
+                <div
+                    {...getRootProps()}
+                    className={`border-2 border-dashed rounded-xl p-12 text-center cursor-pointer transition-colors ${isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-blue-400 hover:bg-gray-50'
+                        }`}
+                >
+                    <input {...getInputProps()} />
+                    <Upload className="mx-auto h-16 w-16 text-gray-400 mb-4" />
+                    <p className="text-xl font-medium text-gray-900">Drag & drop a PDF here</p>
+                    <p className="text-sm text-gray-500 mt-2">or click to select file</p>
+                </div>
+            ) : (
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm space-y-6">
+                    {/* File Info */}
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                            <div className="bg-red-100 p-3 rounded-lg">
+                                <FileIcon className="h-8 w-8 text-red-600" />
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-gray-900 truncate max-w-[200px] sm:max-w-md">{file.name}</h3>
+                                <p className="text-sm text-gray-500">
+                                    Original size: {(file.size / 1024 / 1024).toFixed(2)} MB
+                                </p>
+                                {compressedSize && (
+                                    <p className="text-sm text-green-600 font-medium">
+                                        New size: {(compressedSize / 1024 / 1024).toFixed(2)} MB
+                                        ({Math.round(((file.size - compressedSize) / file.size) * 100)}% reduction)
                                     </p>
-                                    {compressedSize && (
-                                        <p className="text-sm text-green-600 font-medium">
-                                            New size: {(compressedSize / 1024 / 1024).toFixed(2)} MB
-                                            ({Math.round(((file.size - compressedSize) / file.size) * 100)}% reduction)
-                                        </p>
-                                    )}
-                                </div>
+                                )}
                             </div>
-                            <button
-                                onClick={removeFile}
-                                disabled={isProcessing}
-                                className="p-2 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-lg transition-colors disabled:opacity-50"
-                            >
-                                <X className="h-5 w-5" />
-                            </button>
                         </div>
-
-                        {/* Options */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <button
-                                onClick={() => setCompressionMode('standard')}
-                                className={`p-4 rounded-lg border-2 text-left transition-all ${compressionMode === 'standard'
-                                    ? 'border-blue-500 bg-blue-50 ring-1 ring-blue-500'
-                                    : 'border-gray-200 hover:border-blue-200'
-                                    }`}
-                            >
-                                <div className="font-semibold text-gray-900 mb-1">Standard</div>
-                                <div className="text-xs text-gray-500">Fast. Removes metadata. Keeps text selectable. Good for basic optimization.</div>
-                            </button>
-
-                            <button
-                                onClick={() => setCompressionMode('strong')}
-                                className={`p-4 rounded-lg border-2 text-left transition-all ${compressionMode === 'strong'
-                                    ? 'border-blue-500 bg-blue-50 ring-1 ring-blue-500'
-                                    : 'border-gray-200 hover:border-blue-200'
-                                    }`}
-                            >
-                                <div className="font-semibold text-gray-900 mb-1">Strong</div>
-                                <div className="text-xs text-gray-500">Slower. Converts to images. Text NOT selectable. Best for max file size reduction.</div>
-                            </button>
-                        </div>
-
-                        {/* Warning/Info */}
-                        {compressionMode === 'strong' && (
-                            <div className="flex items-start gap-3 bg-yellow-50 p-4 rounded-lg text-sm text-yellow-800">
-                                <Info className="h-5 w-5 text-yellow-600 shrink-0 mt-0.5" />
-                                <p>Strong compression will convert all pages to images. You will not be able to select or copy text in the output PDF.</p>
-                            </div>
-                        )}
-
-                        {/* Action */}
                         <button
-                            onClick={handleCompress}
+                            onClick={removeFile}
                             disabled={isProcessing}
-                            className="w-full py-4 px-6 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-200/50"
+                            className="p-2 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-lg transition-colors disabled:opacity-50"
                         >
-                            {isProcessing ? (
-                                <>
-                                    <Loader2 className="h-5 w-5 animate-spin" />
-                                    {compressionMode === 'strong' ? `Converting Page ${progress}%...` : 'Processing...'}
-                                </>
-                            ) : (
-                                <>
-                                    <Minimize2 className="h-5 w-5" />
-                                    Compress PDF
-                                </>
-                            )}
+                            <X className="h-5 w-5" />
                         </button>
                     </div>
-                )}
 
-                {error && (
-                    <div className="bg-red-50 text-red-600 p-4 rounded-lg text-sm text-center">
-                        {error}
-                    </div>
-                )}
+                    {/* Options */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button
+                            onClick={() => setCompressionMode('standard')}
+                            className={`p-4 rounded-lg border-2 text-left transition-all ${compressionMode === 'standard'
+                                ? 'border-blue-500 bg-blue-50 ring-1 ring-blue-500'
+                                : 'border-gray-200 hover:border-blue-200'
+                                }`}
+                        >
+                            <div className="font-semibold text-gray-900 mb-1">Standard</div>
+                            <div className="text-xs text-gray-500">Fast. Removes metadata. Keeps text selectable. Good for basic optimization.</div>
+                        </button>
 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 mb-2">Two Modes</h3>
-                        <p className="text-sm text-gray-600">Choose between Standard (Metadata removal) and Strong (Rasterization) compression.</p>
+                        <button
+                            onClick={() => setCompressionMode('strong')}
+                            className={`p-4 rounded-lg border-2 text-left transition-all ${compressionMode === 'strong'
+                                ? 'border-blue-500 bg-blue-50 ring-1 ring-blue-500'
+                                : 'border-gray-200 hover:border-blue-200'
+                                }`}
+                        >
+                            <div className="font-semibold text-gray-900 mb-1">Strong</div>
+                            <div className="text-xs text-gray-500">Slower. Converts to images. Text NOT selectable. Best for max file size reduction.</div>
+                        </button>
                     </div>
-                    <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 mb-2">Secure & Private</h3>
-                        <p className="text-sm text-gray-600">Files are processed locally and never uploaded to any server.</p>
-                    </div>
-                    <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 mb-2">High Efficiency</h3>
-                        <p className="text-sm text-gray-600">Strong mode can reduce file sizes by up to 90%.</p>
-                    </div>
+
+                    {/* Warning/Info */}
+                    {compressionMode === 'strong' && (
+                        <div className="flex items-start gap-3 bg-yellow-50 p-4 rounded-lg text-sm text-yellow-800">
+                            <Info className="h-5 w-5 text-yellow-600 shrink-0 mt-0.5" />
+                            <p>Strong compression will convert all pages to images. You will not be able to select or copy text in the output PDF.</p>
+                        </div>
+                    )}
+
+                    {/* Action */}
+                    <button
+                        onClick={handleCompress}
+                        disabled={isProcessing}
+                        className="w-full py-4 px-6 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-200/50"
+                    >
+                        {isProcessing ? (
+                            <>
+                                <Loader2 className="h-5 w-5 animate-spin" />
+                                {compressionMode === 'strong' ? `Converting Page ${progress}%...` : 'Processing...'}
+                            </>
+                        ) : (
+                            <>
+                                <Minimize2 className="h-5 w-5" />
+                                Compress PDF
+                            </>
+                        )}
+                    </button>
+                </div>
+            )}
+
+            {error && (
+                <div className="bg-red-50 text-red-600 p-4 rounded-lg text-sm text-center">
+                    {error}
+                </div>
+            )}
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2">Two Modes</h3>
+                    <p className="text-sm text-gray-600">Choose between Standard (Metadata removal) and Strong (Rasterization) compression.</p>
+                </div>
+                <div className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2">Secure & Private</h3>
+                    <p className="text-sm text-gray-600">Files are processed locally and never uploaded to any server.</p>
+                </div>
+                <div className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2">High Efficiency</h3>
+                    <p className="text-sm text-gray-600">Strong mode can reduce file sizes by up to 90%.</p>
                 </div>
             </div>
-        </ToolLayout>
+        </div>
     );
 }
