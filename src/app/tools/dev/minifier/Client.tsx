@@ -59,6 +59,37 @@ export default function MinifierClient() {
             description="Minify your CSS and JavaScript code to reduce file size."
             icon={Minimize}
             category="Utility"
+            extraContent={
+                <>
+                    <h2>Free Online JavaScript & CSS Minifier</h2>
+                    <p>In modern web development, absolute sheer page loading speed is not merely a technical luxury; it is a critical metric relentlessly enforced by Google's Core Web Vitals algorithms. Slow websites face devastating SEO penalties and massive user bounce rates. Therefore, aggressively compressing your raw source code is absolutely mandatory before any production deployment. Our blazing-fast, entirely Free Online Code Minifier mathematically crushes your bloated JavaScript and verbose CSS stylesheets by ruthlessly eliminating every single unnecessary byte, significantly accelerating your website's overall network delivery speed.</p>
+
+                    <h2>What is Code Minification?</h2>
+                    <p>When professional developers write code, they rightfully prioritize human readability by diligently utilizing plentiful whitespace, perfectly indented lines, semantic variable names, and extensive explanatory comments. However, automated web browsers (like Chrome or Firefox) inherently do not care about human readability whatsoever. Code "minification" is the complex automated process of systematically parsing your raw syntax and algorithmically stripping away every single non-essential character—such as all spaces, agonizing line breaks, and massive block comments—while guaranteeing the underlying logic executes absolutely identically. The mathematically compressed result is an exceedingly dense block of text that is completely illegible to humans, but completely optimized for instantaneous robotic parsing.</p>
+
+                    <h2>How to Rapidly Compress Your Source Code</h2>
+                    <ol>
+                        <li><strong>Designate Your Programming Language:</strong> Strategically utilize the prominent toggle buttons clearly positioned at the very top of the interactive interface to explicitly instruct the parsing engine whether it is evaluating 'CSS' (Cascading Style Sheets) or dynamic 'JavaScript' code.</li>
+                        <li><strong>Input Your Bloated Source:</strong> Carefully paste your entirely uncompressed, fully commented original development code directly into the massive 'Source Code' text area prominently positioned on the extreme left side of the dashboard.</li>
+                        <li><strong>Execute the Aggressive Minification:</strong> Firmly click the dedicated "Minify Code" action button. Our lightning-fast underlying regex engine will instantaneously devour your massive input and violently compress it in a fraction of a millisecond.</li>
+                        <li><strong>Review Your Network Savings:</strong> Observe the crucially important "Savings" metric generated precisely below the final right-hand output window, perfectly illustrating the exact mathematical percentage of raw network bandwidth you have successfully conserved.</li>
+                    </ol>
+
+                    <h2>Core Features & SEO Advantages</h2>
+                    <ul>
+                        <li><strong>Drastic Bandwidth Reduction:</strong> Successfully eliminating thousands of useless characters mathematically directly translates into substantially smaller physical file sizes, saving crucial server bandwidth costs and vastly improving fragile mobile network load times.</li>
+                        <li><strong>Total Client-Side Processing:</strong> We staunchly refuse to illegally upload your highly proprietary corporate source code to external cloud environments. 100% of the intense parsing and regex compression aggressively occurs entirely locally directly within your own physical browser sandbox, assuring absolute cryptographic security.</li>
+                        <li><strong>Zero Forced Dependencies:</strong> Unlike installing incredibly complex Node.js build pipelines like Webpack or Rollup simply to quickly compress a single isolated 50-line tracking script, our instantly accessible web interface requires unequivocally zero complex local terminal configurations.</li>
+                    </ul>
+
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <h3>Will aggressively minifying my scripts accidentally break my dynamic application?</h3>
+                    <p>For standard CSS layouts and relatively simplistic JavaScript logic, our carefully tuned minification engine is exceptionally safe. However, heavily utilizing extremely obscure edge-case syntax, bizarre implicit semicolons, or deeply relying on highly specific code formatting might theoretically cause parsing issues. We strongly advise aggressively testing the rigorously minified output thoroughly in an isolated staging environment before loudly deploying to live production servers.</p>
+
+                    <h3>Why does my severely compressed JS file still seem relatively large?</h3>
+                    <p>Fundamentally, simple "minification" solely removes purely invisible whitespace and completely ignores comments. It inherently does <em>not</em> intelligently rewrite your overarching logical structure or violently rename your ridiculously long, overly descriptive variable names (commonly known as "uglification" or "obfuscation"). If your underlying raw logic is massively bloated, merely removing blank spaces will only provide a mathematically fractional size reduction.</p>
+                </>
+            }
         >
             <div className="w-full max-w-5xl mx-auto space-y-6">
 

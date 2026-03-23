@@ -51,6 +51,34 @@ export default function PasswordGeneratorPage() {
             description="Generate strong, secure passwords to keep your accounts safe."
             icon={Lock}
             category="Utility"
+            extraContent={
+                <>
+                    <h2>Generate Strong, Secure Passwords Instantly</h2>
+                    <p>In today's interconnected digital landscape, cyber security is more critical than ever. The primary line of defense protecting your personal emails, banking details, and social media accounts is your password. Hackers utilize highly sophisticated software capable of guessing millions of weak passwords every single second. Our free online Random Password Generator creates cryptographically robust, unguessable passwords instantly within your browser, ensuring your private digital life remains entirely uncompromised.</p>
+
+                    <h2>Why You Need a Random Password Generator</h2>
+                    <ul>
+                        <li><strong>Defeat Brute Force Attacks:</strong> A password like "Password123" takes less than a millisecond to crack. A 16-character truly random password mixed with symbols takes trillions of years to guess.</li>
+                        <li><strong>Eliminate Password Reuse:</strong> Human psychology makes it difficult to invent unique passwords for the 100+ accounts the average person has. Using a generator ensures absolute uniqueness for every single login.</li>
+                        <li><strong>Remove Emotional Predictability:</strong> Hackers routinely scrape social media to guess passwords based on your pet's name, birth years, or favorite sports teams. True randomness removes this enormous vulnerability.</li>
+                    </ul>
+
+                    <h2>How to Use This Tool</h2>
+                    <ol>
+                        <li><strong>Choose the Length:</strong> Use the interactive slider to determine your password's length. Security experts universally recommend at least 16 characters for maximum protection against modern hardware.</li>
+                        <li><strong>Select Your Character Sets:</strong> Toggle exactly which types of characters you want to include (Uppercase Letters, Lowercase Letters, Numbers, and Special Symbols). <em>Tip: Always include all four categories unless specifically prohibited by a website's strict rules.</em></li>
+                        <li><strong>Generate:</strong> If you don't like the initial password on the screen, simply click the "Generate New Password" button to instantly create another secure combination.</li>
+                        <li><strong>Copy Securely:</strong> Click the copy icon inside the password field to instantly securely copy the text to your computer's clipboard, ready to be pasted securely into your password manager or website login.</li>
+                    </ol>
+
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <h3>Are the generated passwords securely saved on your servers?</h3>
+                    <p>No, never. This Password Generator utilizes Javascript's native `crypto.getRandomValues()` function. This inherently means that the password is generated entirely on your local machine, strictly within your active browser session. We literally possess no technical capacity to see, intercept, transmit, or store the passwords you generate.</p>
+
+                    <h3>What makes a password "Strong"?</h3>
+                    <p>A mathematically "strong" password relies on two primary factors: Length and Complexity (Entropy). A 12-character password using all symbols is incredibly strong. However, a 20-character password using only lowercase letters is also extremely strong simply because the sheer total mathematical combinations are astronomically vast. Combining both length and complexity guarantees absolute security.</p>
+                </>
+            }
         >
             <div className="w-full max-w-2xl mx-auto space-y-8">
 

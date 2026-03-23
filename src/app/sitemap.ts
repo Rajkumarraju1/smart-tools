@@ -33,6 +33,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/text/lorem-ipsum',
         '/tools/text/json-csv',
         '/tools/text/markdown',
+        '/tools/image/resizer',
+        '/tools/pdf/ppt-to-pdf',
     ];
 
     return routes.map((route) => ({

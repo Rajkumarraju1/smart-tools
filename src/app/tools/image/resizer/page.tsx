@@ -21,38 +21,45 @@ export default function ImageResizerPage() {
             <ImageResizerClient />
 
             <ToolContent
-                title="Free Online Image Resizer"
-                introduction="Our powerful Image Resizer tool allows you to easily adjust the dimensions of your photos without compromising quality. Whether you need to resize an image for social media, a website, or a specific document requirement, this tool provides a fast, secure, and user-friendly solution directly in your browser."
+                title="Free Online Image Resizer - Resize Photos Instantly and Securely"
+                introduction="Our powerful, professional-grade Image Resizer tool empowers you to flawlessly adjust the precise pixel dimensions of your photos without compromising on visual quality. Whether you need to resize a hero image for your website, format a profile picture for social media, or fulfill strict document upload requirements, this tool provides a fast, secure, and intuitive solution directly within your browser. There is no need to download clunky software or risk your privacy on cloud servers. Our advanced browser-based scaling algorithms ensure crisp results every time."
                 features={[
-                    "Local Processing: Your images never leave your device. All resizing happens securely in your browser.",
-                    "Aspect Ratio Lock: Easily maintain the original proportions of your image to prevent distortion.",
-                    "File Size Optimization: Reduce the file size (KB/MB) of your images while resizing.",
-                    "Supports Multiple Formats: Works seamlessly with popular formats like JPG, PNG, and WebP.",
-                    "Instant Preview: See exactly how your resized image will look before you download it."
+                    "100% Local Processing: Privacy is our priority. Your images never leave your device. All resizing calculations and outputs happen securely in your local browser sandbox.",
+                    "Perfect Aspect Ratio Lock: Easily maintain the original mathematical proportions of your image to prevent any ugly stretching or physical distortion of your subjects.",
+                    "Custom Resolution Control: Type in the exact pixel width or height you need down to the individual pixel for absolute precision.",
+                    "Integrated File Size Optimization: Reduce the file size (KB/MB) of your images simultaneously while resizing, improving your workflow.",
+                    "Universal Format Support: Works seamlessly and flawlessly with all the most popular web formats including high-res JPG, transparent PNG, and Next-Gen WebP.",
+                    "Instant Live Preview: See exactly how your newly resized image will look and verify the new file size before you even hit the download button."
                 ]}
                 howToUse={[
-                    "Upload your image by dragging and dropping it into the box or clicking to select a file.",
-                    "Enter your desired Width and Height in pixels. Toggle 'Maintain Aspect Ratio' if needed.",
-                    "Optionally set a target file size in KB if you need to compress the image.",
-                    "Click the 'Resize Image' button to process your photo instanly.",
-                    "Download your newly resized image to your device."
+                    "First, securely upload your image by dragging and dropping it into the interactive box, or clicking anywhere inside the box to open your file browser.",
+                    "Wait half a second for the image to load securely into your browser memory.",
+                    "Enter your desired custom Width and Height in pixels in the control panel.",
+                    "Pro Tip: Keep 'Maintain Aspect Ratio' toggled ON if you only want to change one dimension and have the other auto-calculate to prevent stretching.",
+                    "Optionally, set a maximum target file size (in KB) if you need the final image to be compressed to meet specific forum or website constraints.",
+                    "Click the bright 'Resize Image' button to instruct our tool to securely process your photo instantly.",
+                    "Finally, click the Download button to securely save your newly resized and optimized image to your local hard drive or camera roll."
                 ]}
                 faqs={[
                     {
-                        question: "Is it safe to resize private photos?",
-                        answer: "Yes, absolutely! Unlike other online tools, our Image Resizer processes your files 100% locally on your device. Your photos are never uploaded to any server, ensuring complete privacy."
+                        question: "Is it safe to resize confidential documents or private photos here?",
+                        answer: "Yes, absolutely! Unlike many other online tools that secretly upload your files to remote servers for processing, our modern Image Resizer operates 100% locally on your device via client-side JavaScript. Your photos are never uploaded to any cloud server, ensuring absolute privacy and security."
                     },
                     {
-                        question: "Does resizing reduce image quality?",
-                        answer: "Resizing down (making an image smaller) generally preserves quality. Resizing up (making an image larger) can cause some pixelation, but our tool uses high-quality interpolation algorithms to minimize this effect."
+                        question: "Does reducing the pixel dimensions of an image strictly reduce its quality?",
+                        answer: "No! Resizing down (making an image smaller in pixel dimensions) actually preserves the apparent visual quality while discarding unneeded pixel data. It makes the file much smaller. However, 'upscaling' (making an image larger than the original) can cause some blurriness, though our tool utilizes high-quality interpolation algorithms to try and minimize this unavoidable effect."
                     },
                     {
-                        question: "Can I resize multiple images at once?",
-                        answer: "Currently, this tool is designed for single-image precision resizing. We are working on a batch resizing feature for a future update."
+                        question: "Why should I resize my images before uploading them to my website or blog?",
+                        answer: "Uploading massive, un-resized images directly from a phone or camera (often 4000+ pixels wide) severely harms your website's loading speed. By resizing them down to the actual display size (e.g., 800 pixels or 1200 pixels) and thereby reducing the file size, your site will load substantially faster, providing a better user experience and achieving higher search engine rankings (SEO)."
                     },
                     {
-                        question: "Is this tool free to use?",
-                        answer: "Yes, this Image Resizer is completely free to use with no hidden costs, watermarks, or registration requirements."
+                        question: "Can I resize multiple images at once to save time?",
+                        answer: "Currently, this specific tool is hyper-optimized for single-image precision resizing and quality control. We are actively developing a bulk/batch resizing feature for a future update to handle whole albums at once."
+                    },
+                    {
+                        question: "Is this image resizer completely free to use without limits?",
+                        answer: "Yes, this Image Resizer is completely free to use for personal and commercial purposes. There are absolutely no hidden costs, annoying watermarks applied to your photos, or restrictive registration requirements."
                     }
                 ]}
             />
