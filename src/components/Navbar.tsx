@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, X, Wrench, FileText, Image as ImageIcon, Video, Settings } from 'lucide-react';
+import { Menu, X, Wrench, FileText, Image as ImageIcon, Video, Settings, BookOpen } from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
     { name: 'Calculators', href: '/tools/calculators', icon: Settings },
     { name: 'Text Tools', href: '/tools/text', icon: FileText },
     { name: 'Utilities', href: '/tools/utility', icon: Settings },
+    { name: 'Blog', href: '/blog', icon: BookOpen },
   ];
 
   return (

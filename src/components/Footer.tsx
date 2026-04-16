@@ -9,15 +9,24 @@ const Footer = () => {
                         <span className="font-bold text-xl text-gray-900">Smart Tools</span>
                         <p className="text-gray-500 text-sm mt-1">Free online smart tools for everyone.</p>
                     </div>
-                    <div className="flex space-x-6 text-sm">
+                    <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 text-sm">
                         <Link href="/about" className="text-gray-500 hover:text-blue-600 transition-colors">
                             About Us
+                        </Link>
+                        <Link href="/blog" className="text-gray-500 hover:text-blue-600 transition-colors">
+                            Blog
+                        </Link>
+                        <Link href="/faq" className="text-gray-500 hover:text-blue-600 transition-colors">
+                            FAQ
                         </Link>
                         <Link href="/privacy" className="text-gray-500 hover:text-blue-600 transition-colors">
                             Privacy Policy
                         </Link>
                         <Link href="/terms" className="text-gray-500 hover:text-blue-600 transition-colors">
                             Terms of Service
+                        </Link>
+                        <Link href="/disclaimer" className="text-gray-500 hover:text-blue-600 transition-colors">
+                            Disclaimer
                         </Link>
                         <Link href="/contact" className="text-gray-500 hover:text-blue-600 transition-colors">
                             Contact Us

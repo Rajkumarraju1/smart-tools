@@ -82,10 +82,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                         </div>
                     </div>
 
-                    {/* Ad Placeholder - In-Content */}
-                    <div className="mt-8 bg-gray-100 rounded-lg p-4 h-24 flex items-center justify-center text-gray-400 text-sm">
-                        Ad Space (Leaderboard)
-                    </div>
+
 
                     {/* SEO / Extra Content Section */}
                     {extraContent && (
@@ -97,10 +94,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
 
                 {/* Sidebar (Ads & Related Tools) */}
                 <div className="lg:col-span-4 space-y-8">
-                    {/* Sidebar Ad 1 */}
-                    <div className="bg-gray-100 rounded-xl h-[300px] flex items-center justify-center text-gray-400">
-                        Ad Space (Square)
-                    </div>
+
 
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                         <h3 className="font-bold text-gray-900 mb-4">Popular Tools</h3>

@@ -14,8 +14,7 @@ export default function PrivacyPage() {
                 <h3>2. Information We Collect</h3>
                 <p>We do not collect personal identification information from Users except when users voluntarily fill out a form or interact with our site. We may collect non-personal identification information about Users whenever they interact with our Site.</p>
 
-                <h4>Google AdSense</h4>
-                <p>Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads to our users based on previous visits to our site and other sites on the Internet. Users may opt-out of the use of the DART cookie by visiting the Google Ad and Content Network privacy policy.</p>
+
 
                 <h3>3. How We Use Information</h3>
                 <p>We use the information we collect for the following purposes:</p>

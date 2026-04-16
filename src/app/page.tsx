@@ -55,9 +55,17 @@ export default function Home() {
         <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-4">
           All the <span className="text-blue-600">Smart Tools</span> You Need
         </h1>
-        <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-          Free, secure, and fast online tools for your daily tasks. No registration required.
+        <p className="text-xl text-gray-500 max-w-2xl mx-auto mt-6">
+          Your ultimate suite of free, secure, and blazing-fast online utilities. Designed for developers, students, and professionals who need reliable tools without the clutter. No registration, no watermarks, and 100% privacy-focused.
         </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <Link href="/tools/pdf" className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition">
+            Explore PDF Tools
+          </Link>
+          <Link href="/about" className="px-6 py-3 bg-white text-gray-700 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 transition">
+            Learn More
+          </Link>
+        </div>
       </div>
 
       {/* Categories Grid */}
@@ -103,14 +111,49 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-16 prose prose-blue max-w-none mx-auto text-gray-600">
-          <h2 className="text-center text-gray-900">About Our Tools</h2>
-          <p className="text-center">
-            Smart Tools is a collection of useful utilities accessible directly from your web browser.
-            Whether you need to manipulate PDF files, convert images, or perform quick calculations,
-            we have you covered. Our platform is designed to be mobile-friendly, so you can work on the go.
-            We are constantly adding new tools to help developers, students, and professionals be more productive.
-          </p>
+        <div className="mt-24 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Built for Professionals, Students, and Everyday Users</h2>
+              <div className="prose prose-blue text-gray-600">
+                <p>
+                  At Smart Tools, we believe that essential digital utilities should be accessible to everyone. We noticed a gap in the market: most tools are either too complex, full of invasive ads, or require expensive subscriptions. That's why we built this platform.
+                </p>
+                <p>
+                  <strong>For Developers:</strong> Format JSON, minify code, and encode Base64 instantly without sending your proprietary data to a server.
+                </p>
+                <p>
+                  <strong>For Students & Professionals:</strong> Merge research PDFs, compress images for presentations, and track your word count securely on any device.
+                </p>
+                <p>
+                  Our commitment is to keep these tools free, fast, and entirely client-side whenever possible, ensuring your data never leaves your browser.
+                </p>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-60"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-100 rounded-full blur-2xl opacity-60"></div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 relative z-10">Why Choose Us?</h3>
+              <ul className="space-y-4 relative z-10">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm mr-3 mt-0.5">✓</div>
+                  <span className="text-gray-700"><strong>No Data Collection:</strong> Files processed locally.</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm mr-3 mt-0.5">✓</div>
+                  <span className="text-gray-700"><strong>Instant Results:</strong> Zero wait times for uploads/downloads.</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm mr-3 mt-0.5">✓</div>
+                  <span className="text-gray-700"><strong>Mobile Friendly:</strong> Works flawlessly on phones and tablets.</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm mr-3 mt-0.5">✓</div>
+                  <span className="text-gray-700"><strong>Constantly Updating:</strong> New tools added every month.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

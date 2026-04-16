@@ -35,6 +35,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/text/markdown',
         '/tools/image/resizer',
         '/tools/pdf/ppt-to-pdf',
+        '/faq',
+        '/disclaimer',
+        '/blog',
+        '/blog/reduce-pdf-size-without-losing-quality',
+        '/blog/best-practices-image-compression-web',
+        '/blog/png-vs-jpg-vs-webp',
+        '/blog/client-side-processing-privacy',
+        '/blog/how-to-safely-merge-sensitive-pdf-documents',
+        '/blog/ultimate-guide-securing-passwords-online',
+        '/blog/understanding-base64-encoding-developers',
+        '/blog/how-to-optimize-images-faster-website',
+        '/blog/benefits-using-markdown-over-rich-text',
+        '/blog/how-qr-codes-work'
     ];
 
     return routes.map((route) => ({

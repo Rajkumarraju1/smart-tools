@@ -51,7 +51,7 @@ export default function ContactPage() {
                     <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col md:flex-row gap-6 justify-center text-center">
                         <div className="flex items-center justify-center gap-2 text-gray-600">
                             <Mail className="h-5 w-5 text-blue-500" />
-                            <span>support@smarttools.com</span>
+                            <span>support.mywebutils@gmail.com</span>
                         </div>
                         <div className="flex items-center justify-center gap-2 text-gray-600">
                             <MessageSquare className="h-5 w-5 text-blue-500" />

@@ -34,17 +34,37 @@ export default function AboutPage() {
             </div>
 
             <div className="prose prose-blue max-w-none bg-white p-8 rounded-2xl border border-gray-100">
+                <h3>The Story Behind Smart Tools</h3>
+                <p>
+                    Smart Tools (My Web Utils) started with a simple realization: the internet is filled with utility websites, but most of them are cluttered with intrusive advertisements, confusing interfaces, and paywalls. We found ourselves constantly searching for a simple PDF merger or image compressor that didn't demand an email address or a monthly subscription.
+                </p>
+                <p>
+                    Frustrated by the lack of clean, privacy-focused options, our team of developers decided to build our own. What started as a personal weekend project to format JSON strings and compress a few presentation images quickly snowballed into a comprehensive suite of utilities designed for everyone.
+                </p>
+
                 <h3>Our Mission</h3>
                 <p>
-                    Smart Tools was built with a simple mission: to provide a clean, fast, and easy-to-use collection of utilities that help people get things done.
-                    Whether you're a developer needing to format JSON, a student calculating their GPA, or a designer compressing images, we have a tool for you.
+                    Our mission is to democratize digital utilities by providing a clean, blazing-fast, and easy-to-use collection of tools that help people get things done efficiently. We believe that basic file manipulation, text formatting, and calculating tools should be treated as fundamental web rights—freely accessible to anyone with a browser.
                 </p>
-                <h3>Why Choose Us?</h3>
+                <p>
+                    Whether you're a seasoned developer needing to minify code, a student calculating your GPA, or a designer resizing images, we want to be your default utility belt on the web.
+                </p>
+
+                <h3>Meet the Team</h3>
+                <p>
+                    We are a small, passionate group of software engineers, designers, and digital creators who believe in the open web. We care deeply about privacy, which is why we architect our tools to process data locally on your device whenever possible. By eliminating server-side processing for most of our tools, we ensure that your sensitive documents never leave your browser.
+                </p>
+
+                <h3>Our Core Principles</h3>
                 <ul>
-                    <li><strong>Speed:</strong> Our tools are optimized for performance.</li>
-                    <li><strong>Simplicity:</strong> No complex sign-ups or software installation required.</li>
-                    <li><strong>Security:</strong> We prioritize client-side processing to ensure data privacy.</li>
+                    <li><strong>Privacy by Default:</strong> We don't want your data. We design tools to run client-side.</li>
+                    <li><strong>No Hidden Fees:</strong> We don't hide core functionality behind premium tiers.</li>
+                    <li><strong>Speed:</strong> Optimized algorithms ensure you spend less time waiting and more time creating.</li>
+                    <li><strong>Simplicity:</strong> No complex sign-ups, no software installation, and no steep learning curves.</li>
                 </ul>
+                <p>
+                    We're constantly evolving and adding new tools based on user feedback. If you have a suggestion or a tool request, feel free to reach out to us at <strong>support.mywebutils@gmail.com</strong>.
+                </p>
             </div>
         </div>
     );
