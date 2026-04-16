@@ -80,6 +80,20 @@ export default async function BlogPostPage({ params }: Props) {
                 />
             </div>
             
+            {/* Author Box */}
+            <div className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
+                <div className="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-extrabold text-2xl">BF</span>
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">ByteForge AI</h3>
+                    <p className="text-sm text-blue-600 font-semibold mb-3">Intelligent Content System at MyWebUtils</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                        ByteForge AI is the core system behind MyWebUtils, designed to create accurate, optimized, and user-focused digital utility content. It specializes in simplifying complex processes like file optimization, data formatting, and web tools.
+                    </p>
+                </div>
+            </div>
+
             <div className="mt-12 text-center">
                 <Link
                     href="/blog"

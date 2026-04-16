@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '../data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://mywebutils.online';
@@ -37,23 +38,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/pdf/ppt-to-pdf',
         '/faq',
         '/disclaimer',
-        '/blog',
-        '/blog/reduce-pdf-size-without-losing-quality',
-        '/blog/best-practices-image-compression-web',
-        '/blog/png-vs-jpg-vs-webp',
-        '/blog/client-side-processing-privacy',
-        '/blog/how-to-safely-merge-sensitive-pdf-documents',
-        '/blog/ultimate-guide-securing-passwords-online',
-        '/blog/understanding-base64-encoding-developers',
-        '/blog/how-to-optimize-images-faster-website',
-        '/blog/benefits-using-markdown-over-rich-text',
-        '/blog/how-qr-codes-work'
+        '/blog'
     ];
 
-    return routes.map((route) => ({
+    const staticUrls = routes.map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: 'weekly' as const,
         priority: route === '' ? 1 : 0.8,
     }));
+
+    const blogUrls = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    return [...staticUrls, ...blogUrls];
 }

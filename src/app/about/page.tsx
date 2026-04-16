@@ -39,7 +39,7 @@ export default function AboutPage() {
                     Smart Tools (My Web Utils) started with a simple realization: the internet is filled with utility websites, but most of them are cluttered with intrusive advertisements, confusing interfaces, and paywalls. We found ourselves constantly searching for a simple PDF merger or image compressor that didn't demand an email address or a monthly subscription.
                 </p>
                 <p>
-                    Frustrated by the lack of clean, privacy-focused options, our team of developers decided to build our own. What started as a personal weekend project to format JSON strings and compress a few presentation images quickly snowballed into a comprehensive suite of utilities designed for everyone.
+                    Frustrated by the lack of clean, privacy-focused options, we engineered our own solution. What started as a simple utility to format JSON strings and compress presentation images quickly snowballed into a comprehensive suite of utilities designed for everyone.
                 </p>
 
                 <h3>Our Mission</h3>
@@ -50,9 +50,9 @@ export default function AboutPage() {
                     Whether you're a seasoned developer needing to minify code, a student calculating your GPA, or a designer resizing images, we want to be your default utility belt on the web.
                 </p>
 
-                <h3>Meet the Team</h3>
+                <h3>Powered by ByteForge AI</h3>
                 <p>
-                    We are a small, passionate group of software engineers, designers, and digital creators who believe in the open web. We care deeply about privacy, which is why we architect our tools to process data locally on your device whenever possible. By eliminating server-side processing for most of our tools, we ensure that your sensitive documents never leave your browser.
+                    MyWebUtils operates under the guidance of <strong>ByteForge AI</strong>, an intelligent content and utility system. Instead of relying on a disparate team of rotating developers, ByteForge AI ensures consistency, accuracy, and rigorous optimization across every single tool we offer. By defining strict client-side logic parameters, ByteForge guarantees that our tools execute securely in your browser environment without exposing your data to external servers.
                 </p>
 
                 <h3>Our Core Principles</h3>

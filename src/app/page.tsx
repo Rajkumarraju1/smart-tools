@@ -117,16 +117,18 @@ export default function Home() {
               <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Built for Professionals, Students, and Everyday Users</h2>
               <div className="prose prose-blue text-gray-600">
                 <p>
-                  At Smart Tools, we believe that essential digital utilities should be accessible to everyone. We noticed a gap in the market: most tools are either too complex, full of invasive ads, or require expensive subscriptions. That's why we built this platform.
+                  At MyWebUtils, we believe that essential digital utilities should be accessible to everyone without friction. The internet is flooded with basic tools, but most suffer from invasive ad tracking, heavy server dependency, or paywalls blocking essential features. We built this platform to fix that architecture.
                 </p>
                 <p>
-                  <strong>For Developers:</strong> Format JSON, minify code, and encode Base64 instantly without sending your proprietary data to a server.
+                  <strong>What The Platform Offers:</strong> A curated, expansive suite of over 25 unique utilities ranging from PDF manipulation to cryptographic password generation and developer formatting. Everything is hosted in one central, intuitive ecosystem.
                 </p>
                 <p>
-                  <strong>For Students & Professionals:</strong> Merge research PDFs, compress images for presentations, and track your word count securely on any device.
+                  <strong>Who Is It For?</strong> 
+                  <br />- <em>Developers:</em> Format JSON, minify code, and encode Base64 instantly without transmitting proprietary code blocks.
+                  <br />- <em>Students & Professionals:</em> Merge research PDFs, compress images for presentations, and securely calculate financial metrics.
                 </p>
                 <p>
-                  Our commitment is to keep these tools free, fast, and entirely client-side whenever possible, ensuring your data never leaves your browser.
+                  <strong>Why Choose Us Over Alternatives?</strong> Our commitment is to processing speed and fundamental privacy. Most alternatives demand that you upload your file to their server, wait in a queue, and download the returned asset. We utilize <em>client-side processing</em> via modern browser APIs (WebAssembly, HTML5 Canvas) which means your data literally never leaves your device.
                 </p>
               </div>
             </div>
