@@ -6,18 +6,19 @@ import ToolLayout from '@/components/ToolLayout';
 import { Minimize2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Compress PDF - Reduce PDF File Size Free | Smart Tools',
-    description: 'Compress your PDF files online for free. Reduce file size while maintaining quality. Fast, secure, and easy to use.',
-    keywords: ['compress pdf', 'reduce pdf size', 'minimize pdf', 'shrink pdf', 'pdf compressor'],
+    title: 'Compress PDF to 100KB Online (Free & Easy) | Smart Tools',
+    description: 'Compress your PDF to 100KB online for free. Reduce file size without losing quality using our exact, secure client-side compressor.',
+    keywords: ['compress pdf to 100kb online free', 'reduce pdf size', 'compress pdf to 500kb', 'shrink pdf'],
 };
 
 export default function CompressPDFPage() {
     return (
         <ToolLayout
-            title="Compress PDF"
-            description="Reduce the file size of your PDF documents instantly."
+            title="Compress PDF to 100KB Online (Free & Easy)"
+            description="Instantly reduce your PDF's file size without compromising visual quality."
             icon={Minimize2}
             category="PDF"
+            introContent={<p>If you're desperately looking to <strong>compress a PDF to 100KB online for free</strong> to bypass strict email attachment limits or rigid upload portals, you are in the right place. Our powerful document shrinker processes everything directly in your browser, guaranteeing a lean, optimized file without sacrificing your privacy.</p>}
             extraContent={
                 <>
                     <h2>The Ultimate Free Online PDF Compressor</h2>

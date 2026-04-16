@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import MergePDFClient from './Client';
 
 export const metadata: Metadata = {
-    title: 'Merge PDF - Combine PDF Files Online for Free | Smart Tools',
-    description: 'Merge multiple PDF files into one document instantly. Free, secure, and no registration required. Reorder pages and download your combined PDF.',
-    keywords: ['merge pdf', 'combine pdf', 'join pdf', 'pdf merger online', 'pdf combiner'],
+    title: 'How to Merge PDF Files Without Software | Smart Tools',
+    description: 'Learn how to merge PDF files without software quickly and easily. A completely free, local browser-based solution.',
+    keywords: ['how to merge pdf files without software', 'merge pdf online', 'combine pdf files free', 'pdf merger'],
 };
 
 export default function MergePDFPage() {

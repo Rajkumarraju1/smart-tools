@@ -55,10 +55,11 @@ export default function MinifierClient() {
 
     return (
         <ToolLayout
-            title="CSS & JS Minifier"
-            description="Minify your CSS and JavaScript code to reduce file size."
+            title="Minify CSS Online Free Tool"
+            description="Crush JavaScript and CSS stylesheets instantly to drastically speed up web performance."
             icon={Minimize}
             category="Utility"
+            introContent={<p>Searching for a reliable <strong>minify CSS online free tool</strong>? Look no further. Stop dragging down your web performance with bloated stylesheets and massive Javascript comments. Our advanced client-side code minifier crushes your CSS and JS payloads locally in milliseconds to improve your Core Web Vitals score instantly.</p>}
             extraContent={
                 <>
                     <h2>Free Online JavaScript & CSS Minifier</h2>

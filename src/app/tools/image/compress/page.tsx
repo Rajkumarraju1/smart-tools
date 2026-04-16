@@ -4,18 +4,19 @@ import ToolLayout from '@/components/ToolLayout';
 import { Minimize2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Image Compressor - Reduce Image Size Online Free | Smart Tools',
-    description: 'Compress JPG, PNG, and WebP images online without losing quality. Reduce file size for faster websites and easy sharing.',
-    keywords: ['image compressor', 'compress image', 'reduce image size', 'jpg compressor', 'png compressor', 'optimize image'],
+    title: 'Compress Image to 50KB for Upload | Smart Tools',
+    description: 'Easily compress image to 50kb for upload or profoundly reduce image size in kb without losing quality using our free offline compressor.',
+    keywords: ['compress image to 50kb for upload', 'reduce image size in kb without losing quality', 'compress image', 'reduce image size'],
 };
 
 export default function ImageCompressorPage() {
     return (
         <ToolLayout
-            title="Image Compressor"
-            description="Compress images automatically while maintaining the best quality."
+            title="Compress Image to 50KB for Upload"
+            description="Quickly shrink image file sizes while preserving stunning visual quality."
             icon={Minimize2}
             category="Image"
+            introContent={<p>Whether you need to strictly <strong>compress an image to 50KB for upload</strong> to a rigid official application portal, or you broadly want to systematically <strong>reduce image size in KB without losing quality</strong> for a high-performance website, our client-side compression engine delivers flawless optimization instantly.</p>}
             extraContent={
                 <>
                     <h2>What is Online Image Compression?</h2>

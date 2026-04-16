@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import MinifierClient from './Client';
 
 export const metadata: Metadata = {
-    title: 'CSS & JS Minifier - Compress Code Online | Smart Tools',
-    description: 'Minify and compress your CSS and JavaScript code instantly. Reduce file size for faster websites. Free online code minifier.',
-    keywords: ['css minifier', 'js minifier', 'minify code', 'compress css', 'javascript compressor'],
+    title: 'Minify CSS Online Free Tool | Smart Tools',
+    description: 'Use our minify css online free tool to instantly compress CSS and JS files for lightning-fast website performance.',
+    keywords: ['minify css online free tool', 'css minifier online free', 'minify js', 'compress css'],
 };
 
 export default function MinifierPage() {

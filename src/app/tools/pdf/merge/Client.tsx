@@ -77,10 +77,11 @@ export default function MergePDFClient() {
 
     return (
         <ToolLayout
-            title="Merge PDF"
-            description="Combine multiple PDF files into one document in the order you want."
+            title="How to Merge PDF Files Without Software"
+            description="Safely combine multiple PDF files into a single document directly in your browser."
             icon={FilePlus}
             category="PDF"
+            introContent={<p>Wondering <strong>how to merge PDF files without software</strong>? You don't need expensive desktop apps or to upload your sensitive corporate files to unknown cloud servers. This local browser-based utility seamlessly stitches your document pages together in milliseconds.</p>}
             extraContent={
                 <>
                     <h2>The Most Powerful Free Online PDF Merger</h2>

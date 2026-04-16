@@ -10,6 +10,7 @@ interface ToolLayoutProps {
     icon: React.ElementType | React.ReactNode;
     children: React.ReactNode;
     category?: 'PDF' | 'Image' | 'Video' | 'Utility';
+    introContent?: React.ReactNode;
     extraContent?: React.ReactNode;
 }
 
@@ -19,7 +20,8 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
     icon,
     children,
     category,
-    extraContent, // New prop
+    introContent, // New prop for content BEFORE the tool
+    extraContent, // Existing prop for content AFTER the tool
 }) => {
     // Helper to render icon whether it's a Component or an Element
     const renderIcon = () => {
@@ -57,9 +59,16 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                             </div>
                             <div>
                                 <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-                                <p className="text-gray-500">{description}</p>
+                                <p className="text-gray-500 mt-1">{description}</p>
                             </div>
                         </div>
+
+                        {/* Intro / Primer Content Section Before Tool */}
+                        {introContent && (
+                            <div className="mb-6 prose prose-blue max-w-none text-gray-600 border-l-4 border-blue-100 pl-4 py-1 italic">
+                                {introContent}
+                            </div>
+                        )}
 
                         <div className="min-h-[400px] border-2 border-dashed border-gray-100 rounded-xl bg-gray-50 flex flex-col items-center justify-center p-6 transition-all">
                             {children}
