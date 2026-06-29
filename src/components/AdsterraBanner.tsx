@@ -18,6 +18,15 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
     // Clear previous elements to prevent multiple ads rendering on hot reload or re-render
     container.innerHTML = '';
 
+    const params = new URLSearchParams(window.location.search);
+    const isDisabledUrl = params.get('disable_banner') === 'true' || params.get('disable_ads') === 'true';
+    const isDisabledStorage = localStorage.getItem('disable_banner') === 'true' || localStorage.getItem('disable_ads') === 'true';
+    
+    if (isDisabledUrl || isDisabledStorage) {
+      console.log(`Adsterra Banner ${id} is disabled via debug settings.`);
+      return;
+    }
+
     // Assign atOptions to window just before script loading
     (window as any).atOptions = {
       key: id,

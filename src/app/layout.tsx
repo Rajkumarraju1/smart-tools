@@ -54,6 +54,8 @@ export const metadata: Metadata = {
   },
 };
 
+import AdsterraSocialBar from '@/components/AdsterraSocialBar';
+
 export default function RootLayout({
   children,
 }: {
@@ -70,13 +72,11 @@ export default function RootLayout({
         </main>
         <Footer />
         
-        {/* Adsterra Social Bar (Global) */}
-        <Script 
-          src="https://pl30123012.effectivecpmnetwork.com/95/b5/44/95b54442391944749f2b2ce8d32d7a7c.js" 
-          strategy="afterInteractive"
-        />
+        {/* Adsterra Social Bar (Global with dynamic toggle support) */}
+        <AdsterraSocialBar />
       </body>
     </html>
   );
 }
+
 

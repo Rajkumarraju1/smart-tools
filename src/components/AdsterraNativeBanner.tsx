@@ -11,6 +11,15 @@ export default function AdsterraNativeBanner() {
 
     container.innerHTML = '';
 
+    const params = new URLSearchParams(window.location.search);
+    const isDisabledUrl = params.get('disable_native') === 'true' || params.get('disable_ads') === 'true';
+    const isDisabledStorage = localStorage.getItem('disable_native') === 'true' || localStorage.getItem('disable_ads') === 'true';
+    
+    if (isDisabledUrl || isDisabledStorage) {
+      console.log('Adsterra Native Banner is disabled via debug settings.');
+      return;
+    }
+
     // Create the container div that the Adsterra script targets
     const adContainer = document.createElement('div');
     adContainer.id = 'container-8afdaf114c7345f262af59df3fadb6cd';
