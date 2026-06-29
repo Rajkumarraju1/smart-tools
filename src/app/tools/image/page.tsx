@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { Image as ImageIcon, Minimize2, ScanLine, Crop } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Image Tools - Online Image Compression, Resizing & Custom QR Codes',
+    description: 'Compress, resize, and optimize your images locally in your browser. Create custom QR codes for your brand without signups or limits.',
+    keywords: ['image tools', 'image compressor', 'qr code generator', 'image resizer', 'free image editor'],
+    alternates: {
+        canonical: '/tools/image',
+    },
+};
 
 const imageTools = [
     {

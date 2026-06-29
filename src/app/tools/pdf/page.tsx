@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { FileText, FilePlus, Image as ImageIcon, Minimize2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'PDF Tools - Free & Secure Online PDF Utilities',
+    description: 'Merge, compress, and convert PDF files securely in your local browser. All tools are 100% free with no file limits or uploads.',
+    keywords: ['pdf tools', 'free pdf tools', 'merge pdf online', 'compress pdf online', 'convert image to pdf'],
+    alternates: {
+        canonical: '/tools/pdf',
+    },
+};
 
 const pdfTools = [
     {

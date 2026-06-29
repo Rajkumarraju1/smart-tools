@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { FileJson, Binary, Minimize, Code2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Developer Tools - JSON, Base64 & Code Minification',
+    description: 'Format JSON, encode/decode Base64 strings, and minify CSS/JS files locally and securely. 100% free developer utility playground.',
+    keywords: ['developer tools', 'json formatter', 'base64 converter', 'code minifier', 'web developer tools'],
+    alternates: {
+        canonical: '/tools/dev',
+    },
+};
 
 const devTools = [
     {

@@ -4,9 +4,12 @@ import ToolLayout from '@/components/ToolLayout';
 import { Activity } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'BMI Calculator - Calculate Body Mass Index Free | Smart Tools',
+    title: 'BMI Calculator - Calculate Body Mass Index Free',
     description: 'Calculate your Body Mass Index (BMI) accurately. Enter height and weight to check if you are Underweight, Normal, or Overweight. Metric and Imperial units supported.',
     keywords: ['bmi calculator', 'body mass index', 'calculate bmi', 'healthy weight calculator', 'bmi formula'],
+    alternates: {
+        canonical: '/tools/calculators/bmi',
+    },
 };
 
 export default function BMICalculatorPage() {

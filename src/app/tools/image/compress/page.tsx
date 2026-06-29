@@ -4,9 +4,12 @@ import ToolLayout from '@/components/ToolLayout';
 import { Minimize2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Compress Image to 50KB for Upload | Smart Tools',
+    title: 'Compress Image to 50KB for Upload',
     description: 'Easily compress image to 50kb for upload or profoundly reduce image size in kb without losing quality using our free offline compressor.',
     keywords: ['compress image to 50kb for upload', 'reduce image size in kb without losing quality', 'compress image', 'reduce image size'],
+    alternates: {
+        canonical: '/tools/image/compress',
+    },
 };
 
 export default function ImageCompressorPage() {

@@ -6,9 +6,12 @@ import ToolLayout from '@/components/ToolLayout';
 import { Minimize2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Compress PDF to 100KB Online (Free & Easy) | Smart Tools',
+    title: 'Compress PDF to 100KB Online (Free & Easy)',
     description: 'Compress your PDF to 100KB online for free. Reduce file size without losing quality using our exact, secure client-side compressor.',
     keywords: ['compress pdf to 100kb online free', 'reduce pdf size', 'compress pdf to 500kb', 'shrink pdf'],
+    alternates: {
+        canonical: '/tools/pdf/compress',
+    },
 };
 
 export default function CompressPDFPage() {

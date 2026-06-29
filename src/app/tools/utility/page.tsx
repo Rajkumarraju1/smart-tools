@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { Settings, Lock, Type, RefreshCcw } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Utility Tools - Online Password Generators, Word Counters & Unit Converters',
+    description: 'Generate highly secure cryptographic passwords, count characters, and convert metric units locally. Free browser utilities.',
+    keywords: ['utility tools', 'password generator', 'word counter', 'unit converter', 'free utilities online'],
+    alternates: {
+        canonical: '/tools/utility',
+    },
+};
 
 const utilityTools = [
     {

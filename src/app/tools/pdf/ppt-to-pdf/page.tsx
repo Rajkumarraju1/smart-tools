@@ -5,9 +5,12 @@ import ToolLayout from '@/components/ToolLayout';
 import ToolContent from '@/components/ToolContent';
 
 export const metadata: Metadata = {
-    title: 'PPT to PDF - Convert PowerPoint to PDF Free | Smart Tools',
+    title: 'PPT to PDF - Convert PowerPoint to PDF Free',
     description: 'Convert your PowerPoint presentations (PPT, PPTX) into PDF documents instantly. Secure, free, and runs entirely in your browser.',
     keywords: ['ppt to pdf', 'pptx to pdf', 'powerpoint to pdf', 'convert ppt', 'slide convert'],
+    alternates: {
+        canonical: '/tools/pdf/ppt-to-pdf',
+    },
 };
 
 export default function PptToPdfPage() {

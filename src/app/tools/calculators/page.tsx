@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { Activity, Calendar, DollarSign, Calculator } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Online Calculators - BMI, Age & Loan Payments',
+    description: 'Calculate BMI, age, and loan estimates instantly. Secure, accurate, and completely free online calculators.',
+    keywords: ['online calculators', 'bmi calculator', 'age calculator', 'loan calculator', 'finance calculator'],
+    alternates: {
+        canonical: '/tools/calculators',
+    },
+};
 
 const calculators = [
     {

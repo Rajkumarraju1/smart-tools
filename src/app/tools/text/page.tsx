@@ -1,8 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ToolLayout from '@/components/ToolLayout';
 import Link from 'next/link';
 import { Type, Database, FileText, FileCode } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Text & Data Tools - Lorem Ipsum, JSON-CSV & Markdown',
+    description: 'Convert JSON to CSV, preview markdown, and generate Lorem Ipsum text locally. Completely free text utilities for designers and developers.',
+    keywords: ['text tools', 'lorem ipsum generator', 'json to csv converter', 'markdown editor', 'data converter'],
+    alternates: {
+        canonical: '/tools/text',
+    },
+};
 
 const textTools = [
     {
