@@ -163,17 +163,16 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                         </div>
                     </div>
 
-                    {/* Safe Bottom Banner Ad (Iframe only, no redirects) */}
+                    {/* Safe Bottom Banner Ads (Iframe only, no redirects) */}
                     <div className="mt-8">
-                        <span className="text-[10px] text-gray-400 mb-2 block text-center uppercase tracking-wider">Advertisement</span>
-                        <div className="hidden sm:block">
-                            <AdsterraBanner id="722678ab8a480f979e41e806cb81a32c" width={728} height={90} />
-                        </div>
-                        <div className="block sm:hidden">
+                        <span className="text-[10px] text-gray-400 mb-4 block text-center uppercase tracking-wider font-semibold">Advertisement</span>
+                        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+                            <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
                             <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
                         </div>
                     </div>
                 </div>
+
 
 
 

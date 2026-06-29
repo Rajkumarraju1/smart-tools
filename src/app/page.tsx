@@ -176,15 +176,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bottom Leaderboard Banner (Standard display ad) */}
-      <div className="mt-16 border-t border-gray-100 pt-12 flex justify-center">
-        <div className="hidden sm:block">
-          <AdsterraBanner id="38b2463f381410f1a72e51005ec10cfe" width={728} height={90} />
-        </div>
-        <div className="block sm:hidden">
-          <AdsterraBanner id="149fc3a7c578b4fce8c7bd349837a207" width={320} height={50} />
+      {/* Bottom Ads Section (Standard display ads) */}
+      <div className="mt-16 border-t border-gray-100 pt-12">
+        <span className="text-[10px] text-gray-400 mb-4 block text-center uppercase tracking-wider font-semibold">Advertisement</span>
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+          <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
+          <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
         </div>
       </div>
+
 
     </div>
   );
