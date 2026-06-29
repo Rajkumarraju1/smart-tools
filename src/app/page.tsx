@@ -98,6 +98,12 @@ export default function Home() {
           </Link>
         ))}
       </div>
+
+      {/* Mid-content Banner (Standard display ad) */}
+      <div className="my-12 flex justify-center">
+        <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
+      </div>
+
       {/* Why Section */}
       <div className="mt-24 mb-12">
         <div className="text-center mb-12">
@@ -170,8 +176,19 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Bottom Leaderboard Banner (Standard display ad) */}
+      <div className="mt-16 border-t border-gray-100 pt-12 flex justify-center">
+        <div className="hidden sm:block">
+          <AdsterraBanner id="38b2463f381410f1a72e51005ec10cfe" width={728} height={90} />
+        </div>
+        <div className="block sm:hidden">
+          <AdsterraBanner id="149fc3a7c578b4fce8c7bd349837a207" width={320} height={50} />
+        </div>
+      </div>
+
     </div>
   );
 }
+
 
 

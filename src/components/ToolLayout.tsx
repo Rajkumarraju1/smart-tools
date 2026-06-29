@@ -3,7 +3,30 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import AdsterraBanner from './AdsterraBanner';
 
+const allTools = [
+  { title: 'Merge PDF', href: '/tools/pdf/merge', category: 'PDF' },
+  { title: 'Compress PDF', href: '/tools/pdf/compress', category: 'PDF' },
+  { title: 'Image to PDF', href: '/tools/pdf/image-to-pdf', category: 'PDF' },
+  { title: 'PPT to PDF', href: '/tools/pdf/ppt-to-pdf', category: 'PDF' },
+  { title: 'Compress Image', href: '/tools/image/compress', category: 'Image' },
+  { title: 'Image Resizer', href: '/tools/image/resizer', category: 'Image' },
+  { title: 'QR Code Generator', href: '/tools/image/qr-generator', category: 'Image' },
+  { title: 'Base64 Converter', href: '/tools/dev/base64', category: 'Utility' },
+  { title: 'JSON Formatter', href: '/tools/dev/json-formatter', category: 'Utility' },
+  { title: 'CSS/JS Minifier', href: '/tools/dev/minifier', category: 'Utility' },
+  { title: 'JSON <-> CSV Converter', href: '/tools/text/json-csv', category: 'Utility' },
+  { title: 'Lorem Ipsum Generator', href: '/tools/text/lorem-ipsum', category: 'Utility' },
+  { title: 'Markdown Editor', href: '/tools/text/markdown', category: 'Utility' },
+  { title: 'Password Generator', href: '/tools/utility/password-generator', category: 'Utility' },
+  { title: 'Word Counter', href: '/tools/utility/word-counter', category: 'Utility' },
+  { title: 'Unit Converter', href: '/tools/utility/unit-converter', category: 'Utility' },
+  { title: 'Age Calculator', href: '/tools/calculators/age', category: 'Utility' },
+  { title: 'BMI Calculator', href: '/tools/calculators/bmi', category: 'Utility' },
+  { title: 'Loan Calculator', href: '/tools/calculators/loan', category: 'Utility' },
+];
+
 interface ToolLayoutProps {
+
     title: string;
     description: string;
     icon: React.ElementType | React.ReactNode;
@@ -107,8 +130,51 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                         </div>
                     )}
 
-                    {/* Bottom Native Ad removed to prevent redirects */}
+                    {/* Related Tools Section */}
+                    <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+                        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span>Related Utilities</span>
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {allTools
+                                .filter((t) => t.title !== title)
+                                .sort((a, b) => {
+                                    if (a.category === category && b.category !== category) return -1;
+                                    if (a.category !== category && b.category === category) return 1;
+                                    return 0;
+                                })
+                                .slice(0, 4)
+                                .map((tool) => (
+                                    <Link
+                                        key={tool.href}
+                                        href={tool.href}
+                                        className="p-4 rounded-xl border border-gray-100 hover:border-blue-500 hover:shadow-sm transition-all bg-gray-50/50 flex flex-col justify-between"
+                                    >
+                                        <div>
+                                            <span className="text-[9px] uppercase font-bold tracking-wider text-blue-600 block mb-1">{tool.category}</span>
+                                            <h4 className="font-semibold text-gray-900 text-sm">{tool.title}</h4>
+                                        </div>
+                                        <span className="text-xs text-gray-500 mt-2 flex items-center gap-1">
+                                            Open Tool &rarr;
+                                        </span>
+                                    </Link>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    {/* Safe Bottom Banner Ad (Iframe only, no redirects) */}
+                    <div className="mt-8">
+                        <span className="text-[10px] text-gray-400 mb-2 block text-center uppercase tracking-wider">Advertisement</span>
+                        <div className="hidden sm:block">
+                            <AdsterraBanner id="722678ab8a480f979e41e806cb81a32c" width={728} height={90} />
+                        </div>
+                        <div className="block sm:hidden">
+                            <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
+                        </div>
+                    </div>
                 </div>
+
 
 
                 {/* Sidebar (Ads & Related Tools) */}
