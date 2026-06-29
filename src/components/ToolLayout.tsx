@@ -1,8 +1,8 @@
-
-
 import React from 'react';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
+import AdsterraBanner from './AdsterraBanner';
+import AdsterraNativeBanner from './AdsterraNativeBanner';
 
 interface ToolLayoutProps {
     title: string;
@@ -39,7 +39,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Breadcrumb / Back Button */}
-            <div className="mb-6">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <Link
                     href="/"
                     className="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 transition-colors"
@@ -47,6 +47,16 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                     <ChevronLeft className="h-4 w-4 mr-1" />
                     Back to Home
                 </Link>
+
+                {/* Top Ad (Leaderboard on Desktop, Mobile Banner on Mobile) */}
+                <div className="flex justify-center">
+                    <div className="hidden sm:block">
+                        <AdsterraBanner id="38b2463f381410f1a72e51005ec10cfe" width={728} height={90} />
+                    </div>
+                    <div className="block sm:hidden">
+                        <AdsterraBanner id="149fc3a7c578b4fce8c7bd349837a207" width={320} height={50} />
+                    </div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -91,19 +101,27 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                         </div>
                     </div>
 
-
-
                     {/* SEO / Extra Content Section */}
                     {extraContent && (
                         <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 prose prose-blue max-w-none">
                             {extraContent}
                         </div>
                     )}
+
+                    {/* Bottom Native Ad */}
+                    <div className="mt-8">
+                        <span className="text-[10px] text-gray-400 mb-2 block text-center uppercase tracking-wider">Sponsored Links</span>
+                        <AdsterraNativeBanner />
+                    </div>
                 </div>
 
                 {/* Sidebar (Ads & Related Tools) */}
                 <div className="lg:col-span-4 space-y-8">
-
+                    {/* Sidebar Ad (300x250) */}
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col items-center">
+                        <span className="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">Advertisement</span>
+                        <AdsterraBanner id="750cec72414a19117da23f935150045e" width={300} height={250} />
+                    </div>
 
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                         <h3 className="font-bold text-gray-900 mb-4">Popular Tools</h3>
@@ -129,3 +147,4 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
 };
 
 export default ToolLayout;
+

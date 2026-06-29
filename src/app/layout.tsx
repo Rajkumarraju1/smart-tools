@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -68,7 +69,14 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        
+        {/* Adsterra Social Bar (Global) */}
+        <Script 
+          src="https://pl30123012.effectivecpmnetwork.com/95/b5/44/95b54442391944749f2b2ce8d32d7a7c.js" 
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
 }
+

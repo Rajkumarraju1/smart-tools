@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { FileText, Image as ImageIcon, Settings, ArrowRight } from 'lucide-react';
+import AdsterraBanner from '@/components/AdsterraBanner';
+import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 
 const categories = [
   {
@@ -65,6 +67,16 @@ export default function Home() {
           <Link href="/about" className="px-6 py-3 bg-white text-gray-700 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 transition">
             Learn More
           </Link>
+        </div>
+      </div>
+
+      {/* Leaderboard Ad */}
+      <div className="my-12 flex justify-center">
+        <div className="hidden sm:block">
+          <AdsterraBanner id="38b2463f381410f1a72e51005ec10cfe" width={728} height={90} />
+        </div>
+        <div className="block sm:hidden">
+          <AdsterraBanner id="149fc3a7c578b4fce8c7bd349837a207" width={320} height={50} />
         </div>
       </div>
 
@@ -158,6 +170,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Bottom Native Ad */}
+      <div className="mt-16 border-t border-gray-100 pt-12">
+        <span className="text-[10px] text-gray-400 mb-4 block text-center uppercase tracking-wider font-semibold">Sponsored Links</span>
+        <AdsterraNativeBanner />
+      </div>
     </div>
   );
 }
+
