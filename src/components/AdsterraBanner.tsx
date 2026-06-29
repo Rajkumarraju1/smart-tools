@@ -37,8 +37,10 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
     iframe.style.border = 'none';
     iframe.style.overflow = 'hidden';
     iframe.scrolling = 'no';
+    iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms');
     
     container.appendChild(iframe);
+
     
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     if (iframeDoc) {
