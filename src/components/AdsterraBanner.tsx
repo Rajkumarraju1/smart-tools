@@ -30,21 +30,43 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
     (window as any).__active_ads = (window as any).__active_ads || {};
     (window as any).__active_ads[`Banner-${id}`] = true;
 
-    // Assign atOptions to window just before script loading
-    (window as any).atOptions = {
-      key: id,
-      format: 'iframe',
-      height: height,
-      width: width,
-      params: {},
-    };
-
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = `https://www.highperformanceformat.com/${id}/invoke.js`;
-    script.async = true;
-
-    container.appendChild(script);
+    // Create a programmatically isolated iframe to host the banner scripts
+    const iframe = document.createElement('iframe');
+    iframe.width = `${width}`;
+    iframe.height = `${height}`;
+    iframe.style.border = 'none';
+    iframe.style.overflow = 'hidden';
+    iframe.scrolling = 'no';
+    
+    container.appendChild(iframe);
+    
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+    if (iframeDoc) {
+      iframeDoc.open();
+      iframeDoc.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>
+              body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; background: transparent; }
+            </style>
+          </head>
+          <body>
+            <script type="text/javascript">
+              var atOptions = {
+                'key' : '${id}',
+                'format' : 'iframe',
+                'height' : ${height},
+                'width' : ${width},
+                'params' : {}
+              };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/${id}/invoke.js"></script>
+          </body>
+        </html>
+      `);
+      iframeDoc.close();
+    }
 
     return () => {
       delete (window as any).__active_ads[`Banner-${id}`];
@@ -52,6 +74,7 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
         container.innerHTML = '';
       }
     };
+
 
   }, [id, height, width]);
 
