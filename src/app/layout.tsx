@@ -54,7 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-import AdsterraSocialBar from '@/components/AdsterraSocialBar';
 import RedirectLogViewer from '@/components/RedirectLogViewer';
 
 export default function RootLayout({
@@ -129,14 +128,12 @@ export default function RootLayout({
         </main>
         <Footer />
         
-        {/* Adsterra Social Bar (Global with dynamic toggle support) */}
-        <AdsterraSocialBar />
-        
         {/* Redirect logging panel for debugging */}
         <RedirectLogViewer />
       </body>
     </html>
   );
 }
+
 
 

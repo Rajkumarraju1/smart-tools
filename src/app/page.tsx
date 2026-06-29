@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { FileText, Image as ImageIcon, Settings, ArrowRight } from 'lucide-react';
 import AdsterraBanner from '@/components/AdsterraBanner';
-import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 
 const categories = [
   {
@@ -171,12 +170,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bottom Native Ad */}
-      <div className="mt-16 border-t border-gray-100 pt-12">
-        <span className="text-[10px] text-gray-400 mb-4 block text-center uppercase tracking-wider font-semibold">Sponsored Links</span>
-        <AdsterraNativeBanner />
-      </div>
     </div>
   );
 }
+
 

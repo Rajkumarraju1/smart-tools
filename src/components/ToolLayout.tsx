@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import AdsterraBanner from './AdsterraBanner';
-import AdsterraNativeBanner from './AdsterraNativeBanner';
 
 interface ToolLayoutProps {
     title: string;
@@ -108,12 +107,9 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
                         </div>
                     )}
 
-                    {/* Bottom Native Ad */}
-                    <div className="mt-8">
-                        <span className="text-[10px] text-gray-400 mb-2 block text-center uppercase tracking-wider">Sponsored Links</span>
-                        <AdsterraNativeBanner />
-                    </div>
+                    {/* Bottom Native Ad removed to prevent redirects */}
                 </div>
+
 
                 {/* Sidebar (Ads & Related Tools) */}
                 <div className="lg:col-span-4 space-y-8">
