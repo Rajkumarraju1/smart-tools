@@ -54,8 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-import RedirectLogViewer from '@/components/RedirectLogViewer';
-
 export default function RootLayout({
   children,
 }: {
@@ -63,62 +61,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            var logs = JSON.parse(localStorage.getItem('redirect_logs') || '[]');
-            var lastInteraction = 0;
-            
-            function logEvent(type, targetUrl) {
-              var interactionDiff = lastInteraction > 0 ? (Date.now() - lastInteraction) : -1;
-              var hasInteraction = lastInteraction > 0 && interactionDiff < 5000;
-              var logEntry = {
-                type: type,
-                url: targetUrl || 'Unknown Destination',
-                timestamp: new Date().toISOString(),
-                readyState: document.readyState,
-                hasInteraction: hasInteraction,
-                timeSinceLastInteractionMs: interactionDiff,
-                pageUrl: window.location.href,
-                activeAds: Object.keys(window.__active_ads || {})
-              };
-              logs.push(logEntry);
-              localStorage.setItem('redirect_logs', JSON.stringify(logs));
-              console.warn('[RedirectTracker]', logEntry);
-            }
-
-            window.addEventListener('click', function() { lastInteraction = Date.now(); }, true);
-            window.addEventListener('keypress', function() { lastInteraction = Date.now(); }, true);
-            window.addEventListener('touchstart', function() { lastInteraction = Date.now(); }, true);
-
-            // Hook window.open
-            var originalOpen = window.open;
-            window.open = function(url, target, features) {
-              logEvent('window.open', url);
-              return originalOpen.apply(this, arguments);
-            };
-
-            // Hook location assign and replace if supported
-            try {
-              var originalAssign = window.location.assign;
-              window.location.assign = function(url) {
-                logEvent('location.assign', url);
-                originalAssign.call(window.location, url);
-              };
-              var originalReplace = window.location.replace;
-              window.location.replace = function(url) {
-                logEvent('location.replace', url);
-                originalReplace.call(window.location, url);
-              };
-            } catch(e) {}
-
-            // Hook onbeforeunload to log general exits
-            window.addEventListener('beforeunload', function() {
-              logEvent('beforeunload', 'Page Unload Triggered');
-            });
-          })();
-        ` }} />
-      </head>
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50 text-gray-900`}>
 
         <JsonLd />
@@ -127,13 +69,11 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        
-        {/* Redirect logging panel for debugging */}
-        <RedirectLogViewer />
       </body>
     </html>
   );
 }
+
 
 
 
