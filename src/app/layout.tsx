@@ -80,7 +80,8 @@ export default function RootLayout({
                 readyState: document.readyState,
                 hasInteraction: hasInteraction,
                 timeSinceLastInteractionMs: interactionDiff,
-                pageUrl: window.location.href
+                pageUrl: window.location.href,
+                activeAds: Object.keys(window.__active_ads || {})
               };
               logs.push(logEntry);
               localStorage.setItem('redirect_logs', JSON.stringify(logs));

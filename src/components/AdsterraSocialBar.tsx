@@ -14,6 +14,9 @@ export default function AdsterraSocialBar() {
       return;
     }
 
+    (window as any).__active_ads = (window as any).__active_ads || {};
+    (window as any).__active_ads['SocialBar-pl30123012'] = true;
+
     const script = document.createElement('script');
     script.src = 'https://pl30123012.effectivecpmnetwork.com/95/b5/44/95b54442391944749f2b2ce8d32d7a7c.js';
     script.async = true;
@@ -21,11 +24,13 @@ export default function AdsterraSocialBar() {
     document.body.appendChild(script);
 
     return () => {
+      delete (window as any).__active_ads['SocialBar-pl30123012'];
       // Clean up script if component unmounts
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
     };
+
   }, []);
 
   return null;

@@ -20,6 +20,9 @@ export default function AdsterraNativeBanner() {
       return;
     }
 
+    (window as any).__active_ads = (window as any).__active_ads || {};
+    (window as any).__active_ads['NativeBanner-pl30123010'] = true;
+
     // Create the container div that the Adsterra script targets
     const adContainer = document.createElement('div');
     adContainer.id = 'container-8afdaf114c7345f262af59df3fadb6cd';
@@ -35,10 +38,12 @@ export default function AdsterraNativeBanner() {
     container.appendChild(script);
 
     return () => {
+      delete (window as any).__active_ads['NativeBanner-pl30123010'];
       if (container) {
         container.innerHTML = '';
       }
     };
+
   }, []);
 
   return (

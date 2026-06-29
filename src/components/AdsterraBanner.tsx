@@ -27,6 +27,9 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
       return;
     }
 
+    (window as any).__active_ads = (window as any).__active_ads || {};
+    (window as any).__active_ads[`Banner-${id}`] = true;
+
     // Assign atOptions to window just before script loading
     (window as any).atOptions = {
       key: id,
@@ -44,10 +47,12 @@ export default function AdsterraBanner({ id, height, width }: AdsterraBannerProp
     container.appendChild(script);
 
     return () => {
+      delete (window as any).__active_ads[`Banner-${id}`];
       if (container) {
         container.innerHTML = '';
       }
     };
+
   }, [id, height, width]);
 
   return (
